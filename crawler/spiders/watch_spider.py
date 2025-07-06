@@ -5,7 +5,7 @@ from rich import print
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from models.product_model import IstoreItemModel
+from models.base_model import BaseItemModel
 import datetime
 
 log_path = Path('logs')
@@ -58,7 +58,7 @@ class WatchSpider(scrapy.Spider):
                 'url': url,
                 'image_url': img
             }
-            item = IstoreItemModel(**data)
+            item = BaseItemModel(**data)
             yield item.model_dump()
 
         next_page = response.css('div.pages li a.next::attr(href)').get()
