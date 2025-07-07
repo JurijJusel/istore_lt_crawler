@@ -19,12 +19,11 @@ targeting product data from [istore.lt](https://www.istore.lt).
   - Accessories
   - Promotions (Akcijos)
 - **Extracts product details** such as name, price, availability, URL, image URL,
-and category-specific attributes (e.g., specs for iMac, params for iPad).
+and category-specific attributes (e.g., specs for iMac, iPad).
 - **Stores data** as line-delimited JSON (`.jsonl`) in the `data` directory.
 
 ## Data Models
-
-### IstoreItemModel (used by most spiders)
+###  BaseItemModel (used by most spiders)
 - `name`: Product name (str)
 - `price`: Product price (str)
 - `downloaded_date`: Date and time when the data was scraped (str)
@@ -105,7 +104,7 @@ make run
 
 ## Output
 - Data is saved in 'data/' as .jsonl files (overwritten on each run).
-- Logs are saved in 'logs/'' (see settings.py).
+- Logs are saved in 'logs/' (see settings.py).
 
 ## License
 MIT License
